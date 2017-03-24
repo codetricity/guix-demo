@@ -4,4 +4,4 @@ can be purchased on [ARROW](https://www.arrow.com/en/products/yssks7g2e30/renesa
 
 This is for [Quick Tutorial: Customizing GUI Event Handler](http://learn.iotcommunity.io/t/quick-tutorial-customizing-gui-event-handler/585)
 
-![](../game-board.jpg)
+![](gui/game-board.jpg)
