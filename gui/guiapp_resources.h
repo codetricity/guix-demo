@@ -6,7 +6,7 @@
 /*  site at www.expresslogic.com.                                              */
 /*                                                                             */
 /*  GUIX Studio Revision 5.3.0.1                                               */
-/*  Date (dd.mm.yyyy): 15. 3.2017   Time (hh:mm): 13:02                        */
+/*  Date (dd.mm.yyyy): 21. 3.2017   Time (hh:mm): 08:48                        */
 /*******************************************************************************/
 
 
@@ -72,7 +72,8 @@
 #define GX_PIXELMAP_ID_CHECKBOX_ON 3
 #define GX_PIXELMAP_ID_CHECKBOX_OFF 4
 #define GX_PIXELMAP_ID_YUKI_ICON 5
-#define DISPLAY_1_PIXELMAP_TABLE_SIZE 6
+#define GX_PIXELMAP_ID_TITANFALL 6
+#define DISPLAY_1_PIXELMAP_TABLE_SIZE 7
 
 /* String Ids                                                                  */
 

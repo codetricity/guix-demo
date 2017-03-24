@@ -6,7 +6,7 @@
 /*  www.expresslogic.com.                                                      */
 /*                                                                             */
 /*  GUIX Studio Revision 5.3.0.1                                               */
-/*  Date (dd.mm.yyyy): 15. 3.2017   Time (hh:mm): 13:02                        */
+/*  Date (dd.mm.yyyy): 21. 3.2017   Time (hh:mm): 08:48                        */
 /*******************************************************************************/
 
 
@@ -15,6 +15,7 @@
 #include "guiapp_resources.h"
 #include "guiapp_specifications.h"
 
+WINDOW3_CONTROL_BLOCK window3;
 WINDOW2_CONTROL_BLOCK window2;
 WINDOW1_CONTROL_BLOCK window1;
 
@@ -101,6 +102,61 @@ UINT gx_studio_window_create(GX_CONST GX_STUDIO_WIDGET *info, GX_WIDGET *control
     }
     return status;
 }
+GX_WINDOW_PROPERTIES window3_properties =
+{
+    0                                        /* wallpaper pixelmap id          */
+};
+GX_ICON_PROPERTIES window3_titanfall_properties =
+{
+    GX_PIXELMAP_ID_TITANFALL,                /* normal pixelmap id             */
+    GX_PIXELMAP_ID_TITANFALL                 /* selected pixelmap id           */
+};
+
+GX_CONST GX_STUDIO_WIDGET window3_titanfall_define =
+{
+    "titanfall",
+    GX_TYPE_ICON,                            /* widget type                    */
+    titanfall_icon,                          /* widget id                      */
+    #if defined(GX_WIDGET_USER_DATA)
+    0,                                       /* user data                      */
+    #endif
+    GX_STYLE_BORDER_NONE|GX_STYLE_ENABLED,   /* style flags                    */
+    GX_STATUS_ACCEPTS_FOCUS,                 /* status flags                   */
+    100,                                     /* control block size             */
+    GX_COLOR_ID_WIDGET_FILL,                 /* normal color id                */
+    GX_COLOR_ID_SELECTED_FILL,               /* selected color id              */
+    gx_studio_icon_create,                   /* create function                */
+    GX_NULL,                                 /* drawing function override      */
+    GX_NULL,                                 /* event function override        */
+    {12, 9, 231, 228},                       /* widget size                    */
+    GX_NULL,                                 /* no next widget                 */
+    GX_NULL,                                 /* no child widgets               */ 
+    offsetof(WINDOW3_CONTROL_BLOCK, window3_titanfall), /* control block       */
+    (void *) &window3_titanfall_properties   /* extended properties            */
+};
+
+GX_CONST GX_STUDIO_WIDGET window3_define =
+{
+    "window3",
+    GX_TYPE_WINDOW,                          /* widget type                    */
+    ID_WINDOW3,                              /* widget id                      */
+    #if defined(GX_WIDGET_USER_DATA)
+    0,                                       /* user data                      */
+    #endif
+    GX_STYLE_BORDER_RAISED,                  /* style flags                    */
+    GX_STATUS_ACCEPTS_FOCUS,                 /* status flags                   */
+    132,                                     /* control block size             */
+    GX_COLOR_ID_WINDOW_FILL,                 /* normal color id                */
+    GX_COLOR_ID_SELECTED_FILL,               /* selected color id              */
+    gx_studio_window_create,                 /* create function                */
+    GX_NULL,                                 /* drawing function override      */
+    (UINT (*)(GX_WIDGET *, GX_EVENT *)) window3_handler, /* event function override */
+    {0, 0, 239, 319},                        /* widget size                    */
+    GX_NULL,                                 /* next widget                    */
+    &window3_titanfall_define,               /* child widget                   */
+    0,                                       /* control block                  */
+    (void *) &window3_properties             /* extended properties            */
+};
 GX_WINDOW_PROPERTIES window2_properties =
 {
     0                                        /* wallpaper pixelmap id          */
@@ -369,6 +425,7 @@ GX_CONST GX_STUDIO_WIDGET window1_define =
 };
 GX_CONST GX_STUDIO_WIDGET_ENTRY guiapp_widget_table[] =
 {
+    { &window3_define, (GX_WIDGET *) &window3 },
     { &window2_define, (GX_WIDGET *) &window2 },
     { &window1_define, (GX_WIDGET *) &window1 },
     {GX_NULL, GX_NULL}

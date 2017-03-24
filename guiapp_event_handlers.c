@@ -47,6 +47,21 @@ UINT window2_handler(GX_WINDOW *widget, GX_EVENT *event_ptr)
 
     switch (event_ptr->gx_event_type){
         case GX_EVENT_PEN_UP:
+            show_window((GX_WINDOW*)&window3, (GX_WIDGET*)widget, true);
+            break;
+        default:
+            result = gx_window_event_process(widget, event_ptr);
+            break;
+    }
+    return result;
+}
+
+UINT window3_handler(GX_WINDOW *widget, GX_EVENT *event_ptr)
+{
+    UINT result = gx_window_event_process(widget, event_ptr);
+
+    switch (event_ptr->gx_event_type){
+        case GX_EVENT_PEN_UP:
             show_window((GX_WINDOW*)&window1, (GX_WIDGET*)widget, true);
             break;
         default:

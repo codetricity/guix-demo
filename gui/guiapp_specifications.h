@@ -6,7 +6,7 @@
 /*  www.expresslogic.com.                                                      */
 /*                                                                             */
 /*  GUIX Studio Revision 5.3.0.1                                               */
-/*  Date (dd.mm.yyyy): 15. 3.2017   Time (hh:mm): 13:02                        */
+/*  Date (dd.mm.yyyy): 21. 3.2017   Time (hh:mm): 08:48                        */
 /*******************************************************************************/
 
 
@@ -18,15 +18,17 @@
 
 /* Define widget ids                                                           */
 
-#define ID_WINDOW2 1
-#define ID_HELLO 2
-#define ID_WINDOW2_TEXT 3
-#define YUKI_ICON 4
-#define ID_WINDOW1 5
-#define ID_WINDOWCHANGER 6
-#define ID_BUTTONENABLER 7
-#define ID_INSTRUCTIONS 8
-#define ID_WINDOW1_TEXT 9
+#define ID_WINDOW3 1
+#define titanfall_icon 2
+#define ID_WINDOW2 3
+#define ID_HELLO 4
+#define ID_WINDOW2_TEXT 5
+#define YUKI_ICON 6
+#define ID_WINDOW1 7
+#define ID_WINDOWCHANGER 8
+#define ID_BUTTONENABLER 9
+#define ID_INSTRUCTIONS 10
+#define ID_WINDOW1_TEXT 11
 
 
 /* Declare properties structures for each utilized widget type                 */
@@ -102,6 +104,12 @@ typedef struct
 
 /* Declare top-level control blocks                                            */
 
+typedef struct WINDOW3_CONTROL_BLOCK_STRUCT
+{
+    GX_WINDOW_MEMBERS_DECLARE
+    GX_ICON window3_titanfall;
+} WINDOW3_CONTROL_BLOCK;
+
 typedef struct WINDOW2_CONTROL_BLOCK_STRUCT
 {
     GX_WINDOW_MEMBERS_DECLARE
@@ -123,6 +131,7 @@ typedef struct WINDOW1_CONTROL_BLOCK_STRUCT
 /* extern statically defined control blocks                                    */
 
 #ifndef GUIX_STUDIO_GENERATED_FILE
+extern WINDOW3_CONTROL_BLOCK window3;
 extern WINDOW2_CONTROL_BLOCK window2;
 extern WINDOW1_CONTROL_BLOCK window1;
 #endif
@@ -186,6 +195,7 @@ VOID _gx_synergy_jpeg_draw (GX_DRAW_CONTEXT *p_context, INT x, INT y, GX_PIXELMA
 
 /* Declare event process functions, draw functions, and callback functions     */
 
+UINT window3_handler(GX_WINDOW *widget, GX_EVENT *event_ptr);
 UINT window2_handler(GX_WINDOW *widget, GX_EVENT *event_ptr);
 UINT window1_handler(GX_WINDOW *widget, GX_EVENT *event_ptr);
 
